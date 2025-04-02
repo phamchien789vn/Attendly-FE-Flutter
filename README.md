@@ -37,8 +37,8 @@ flutter pub get
 ```
 
 3. Cấu hình API:
-```Vào file lib/utils/api_constants.dart
-Cấu hình lại hằng số "baseUrl"
+```
+Vào file lib/utils/api_constants.dart. Cấu hình lại hằng số "baseUrl"
 ```
 
 4. Chạy ứng dụng:
