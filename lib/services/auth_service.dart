@@ -72,8 +72,6 @@ class AuthService {
         }),
       );
 
-      print(response);
-
       if (response.statusCode == 201) {
         final apiResponse = ApiResponse<String>.fromJson(
           json.decode(response.body),

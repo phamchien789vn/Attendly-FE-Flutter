@@ -1,5 +1,5 @@
 class ApiConstants {
-  static const String baseUrl = 'https://806e-1-52-49-153.ngrok-free.app';
+  static const String baseUrl = 'https://03c1-1-52-49-153.ngrok-free.app';
 
   // Version API
   static const String version1 = '/v1';
