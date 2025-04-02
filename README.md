@@ -42,8 +42,13 @@ Vào file lib/utils/api_constants.dart. Cấu hình lại hằng số "baseUrl"
 ```
 
 4. Chạy ứng dụng:
+- Chạy trong môi trường phát triển
 ```bash
 flutter run
+```
+- Build môi trường production
+```bash
+flutter build apk
 ```
 
 ## Cấu trúc dự án
