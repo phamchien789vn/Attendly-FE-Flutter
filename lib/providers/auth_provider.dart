@@ -55,21 +55,16 @@ class AuthProvider with ChangeNotifier {
 
       _jwtPayload = await _authService.login(email, password);
       _successMessage = 'Đăng nhập thành công';
-      _isLoading = false;
-      notifyListeners();
     } catch (e) {
-      _isLoading = false;
       _error = e.toString();
+    } finally {
+      _isLoading = false;
       notifyListeners();
     }
   }
 
   Future<void> register(
-    String name,
-    String email,
-    String password,
-    String role,
-  ) async {
+      String name, String email, String password, String role) async {
     try {
       _isLoading = true;
       _error = null;
@@ -78,11 +73,10 @@ class AuthProvider with ChangeNotifier {
 
       _jwtPayload = await _authService.register(name, email, password, role);
       _successMessage = 'Đăng ký thành công';
-      _isLoading = false;
-      notifyListeners();
     } catch (e) {
+      _error = e.toString();
+    } finally {
       _isLoading = false;
-      _error = e.toString().replaceAll('Exception: ', '');
       notifyListeners();
     }
   }
@@ -96,11 +90,10 @@ class AuthProvider with ChangeNotifier {
 
       await _authService.logout();
       _jwtPayload = null;
-      _isLoading = false;
-      notifyListeners();
     } catch (e) {
-      _isLoading = false;
       _error = e.toString();
+    } finally {
+      _isLoading = false;
       notifyListeners();
     }
   }
